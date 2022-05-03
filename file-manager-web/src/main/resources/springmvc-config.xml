@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- 启用springmvc注解
+        主要注册@Autowired、@Resource、@PostConstruct等基础注解
+        的处理器bean
+    -->
+<!--    <context:annotation-config/>-->
+
+    <!-- 其包含了 <context:annotation-config/>的所有基础注解，
+        并且提供了如@ResponseBody、@RequestBody之类的处理json请求的注解
+        有了这个注解，<context:annotation-config/>就可以不用了。
+    -->
+    <mvc:annotation-driven/>
+
+
+    <!-- 开启包扫描 -->
+    <context:component-scan base-package="com.house"/>
+
+    <!-- 视图解析器 -->
+    <bean id="resourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 前缀，即页面所在位置 -->
+        <property name="prefix" value="/WEB-INF/pages"/>
+        <!-- 后缀， 即解析的页面-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--springmvc框架处理请求是根据web.xml配置的前端控制器映射请求"/"来处理的，
+        即springmvc是根据名称而不是路径来检索请求的
+        也就是说所有请求都会当作普通请求，在请求静态资源如/static/css/xxx.css时候匹配不到请求名称
+        就会报404，配置下面标签会在spring容器生成一个DefaultServletHttpRequestHandler，
+        在找不到名称对应请求的时候就会去找对应静态资源
+    -->
+    <mvc:default-servlet-handler/>
+
+</beans>
