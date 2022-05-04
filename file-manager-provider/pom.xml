@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>file-manager-web</artifactId>
+    <artifactId>file-manager-provider</artifactId>
+
     <packaging>war</packaging>
 
     <properties>
@@ -17,8 +18,8 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
-    <dependencies>
 
+    <dependencies>
         <!-- 1、spring核心依赖包 start -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -80,18 +81,6 @@
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>jsp-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
 
         <dependency>
             <groupId>org.apache.dubbo</groupId>
@@ -104,5 +93,6 @@
         </dependency>
 
     </dependencies>
+
 
 </project>

@@ -4,7 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>入门程序</h1>
+<h1>首页</h1>
 <a href="">入门程序</a>
 </body>
 </html>
