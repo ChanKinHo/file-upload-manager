@@ -4,16 +4,16 @@
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo
-       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!--声明服务提供者名称，dubbo内部使用的唯一标识-->
     <dubbo:application name="file-manager-provider" />
 
     <!--指定dubbo协议名称和端口号-->
-    <dubbo:protocol name="dubbo" port="20880"/>
+    <dubbo:protocol name="dubbo" port="20881"/>
 
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry address="zookeeper:/120.79.27.236:2181"/>
 
     <!--暴露服务
         interface: 暴露的服务的接口全限定类名

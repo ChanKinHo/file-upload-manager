@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>file-manager-provider</artifactId>
+    <artifactId>file-upload-worker</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -18,6 +18,13 @@
 
 
     <dependencies>
+
+        <dependency>
+            <artifactId>common-interface</artifactId>
+            <groupId>com.house</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <!-- 1、spring核心依赖包 start -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -90,8 +97,6 @@
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-framework</artifactId>
         </dependency>
-
     </dependencies>
-
 
 </project>

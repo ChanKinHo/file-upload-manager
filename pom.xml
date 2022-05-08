@@ -11,6 +11,8 @@
     <modules>
         <module>file-manager-web</module>
         <module>file-manager-provider</module>
+        <module>common-interface</module>
+        <module>file-upload-worker</module>
     </modules>
 
     <properties>
@@ -21,7 +23,8 @@
         <junit-version>4.12</junit-version>
         <servlet-version>3.1.0</servlet-version>
         <jsp-version>2.1</jsp-version>
-        <dubbo.version>3.0.7</dubbo.version>
+        <dubbo.version>2.6.5</dubbo.version>
+        <zk-client.version>5.2.1</zk-client.version>
     </properties>
 
     <dependencyManagement>
@@ -109,26 +112,27 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet-version}</version>
-                <scope>provided</scope>
+                <scope>compile</scope>
             </dependency>
 
             <dependency>
                 <groupId>javax.servlet.jsp</groupId>
                 <artifactId>jsp-api</artifactId>
                 <version>${jsp-version}</version>
-                <scope>provided</scope>
+                <scope>compile</scope>
             </dependency>
 
+
             <dependency>
-                <groupId>org.apache.dubbo</groupId>
+                <groupId>com.alibaba</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo.version}</version>
             </dependency>
+
             <dependency>
-                <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-dependencies-zookeeper</artifactId>
-                <version>${dubbo.version}</version>
-                <type>pom</type>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${zk-client.version}</version>
             </dependency>
 
         </dependencies>
