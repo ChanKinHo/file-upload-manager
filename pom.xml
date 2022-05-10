@@ -10,7 +10,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>file-manager-web</module>
-        <module>file-manager-provider</module>
         <module>common-interface</module>
         <module>file-upload-worker</module>
     </modules>

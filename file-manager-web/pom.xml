@@ -101,6 +101,12 @@
             <artifactId>curator-framework</artifactId>
         </dependency>
 
+        <dependency>
+            <artifactId>common-interface</artifactId>
+            <groupId>com.house</groupId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>
