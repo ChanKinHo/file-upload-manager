@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!--声明服务提供者名称，dubbo内部使用的唯一标识-->
+    <dubbo:application name="file-upload-worker" />
+
+    <!--指定dubbo协议名称和端口号-->
+    <dubbo:protocol name="dubbo" port="20881"/>
+
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+
+    <!--暴露服务
+        interface: 暴露的服务的接口全限定类名
+        ref: 暴露的服务在spring容器的实例
+        register: 使用直连方式，不用注册中心则写为 N/A
+    -->
+    <dubbo:service interface="com.house.demo.service.HelloService" ref="helloService"/>
+
+
+    <bean id="helloService" class="com.house.demo.service.impl.HelloServiceImpl"/>
+</beans>
