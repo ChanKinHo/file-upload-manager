@@ -102,8 +102,8 @@
         </dependency>
 
         <dependency>
-            <artifactId>common-interface</artifactId>
             <groupId>com.house</groupId>
+            <artifactId>common-interface</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
