@@ -5,6 +5,14 @@
          version="4.0">
 
     <!-- spring 监听器 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/dubbo-consumer.xml</param-value>
+    </context-param>
 
     <!-- spring 前端控制器 -->
     <servlet>
@@ -14,7 +22,7 @@
         <!-- spring配置文件 -->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:springmvc-config.xml,classpath:spring/dubbo-consumer.xml</param-value>
+            <param-value>classpath:springmvc-config.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
