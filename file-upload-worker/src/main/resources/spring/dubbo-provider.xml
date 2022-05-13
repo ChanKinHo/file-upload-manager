@@ -13,7 +13,7 @@
     <!--指定dubbo协议名称和端口号-->
     <dubbo:protocol name="dubbo" port="20881"/>
 
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry address="zookeeper://120.79.27.236:2181"/>
 
     <!--暴露服务
         interface: 暴露的服务的接口全限定类名
