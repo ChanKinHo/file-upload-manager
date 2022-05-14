@@ -4,6 +4,16 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!-- 过滤器 -->
+    <filter>
+        <filter-name>fileHeaderFilter</filter-name>
+        <filter-class>com.house.filter.FileHeaderFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>fileHeaderFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <!-- spring 监听器 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

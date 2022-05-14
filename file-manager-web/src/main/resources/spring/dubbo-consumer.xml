@@ -15,5 +15,5 @@
 
     <dubbo:registry address="zookeeper://120.79.27.236:2181"/>
 
-    <dubbo:reference id="helloService" interface="com.house.demo.service.HelloService"/>
+    <dubbo:reference id="helloService" interface="com.house.demo.service.HelloService" check="false"/>
 </beans>
